@@ -1,0 +1,35 @@
+{
+  "name": "app-icon",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
+    "@windicss/plugin-animations": "^1.0.9",
+    "svelte": "^3.37.0",
+    "vite": "^2.6.4",
+    "vite-plugin-windicss": "^1.4.12",
+    "windicss": "^3.2.1"
+  },
+  "dependencies": {
+    "daisyui": "^1.16.2",
+    "svelte-stack-router": "^2.4.6"
+  },
+  "description": "This template should help get you started developing with Svelte in Vite.",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonjavanteese/nwp-icon-svelte.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonjavanteese/nwp-icon-svelte/issues"
+  },
+  "homepage": "https://github.com/sonjavanteese/nwp-icon-svelte#readme"
+}
