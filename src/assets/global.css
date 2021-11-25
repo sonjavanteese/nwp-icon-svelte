@@ -167,6 +167,7 @@ td,
 th {
   padding: 0.5em;
   border-bottom: 1px solid #f1f1f1;
+  
 }
 
 button:focus,
@@ -225,13 +226,13 @@ textarea:focus {
   border: 2px dashed red;
 } */
 
-.input {
+.input-field  {
   @apply appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none;
 }
 .label {
-  @apply block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold;
+  @apply block mb-1 text-xs text-gray-700 uppercase font-thin;
 }
-.input-field {
+.input{
   @apply appearance-none block w-full py-3 px-4 text-gray-400 bg-white border border-gray-200 rounded focus:border-gray-200 focus:outline-none;
 }
 .button {

@@ -35,7 +35,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    require('daisyui'),
     plugin(({ addUtilities }) => {
       const newUtilities = {
         '.skew-10deg': {

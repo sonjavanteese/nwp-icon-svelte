@@ -16,6 +16,7 @@
     "windicss": "^3.2.1"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^1.28.1",
     "daisyui": "^1.16.2",
     "svelte-stack-router": "^2.4.6"
   },

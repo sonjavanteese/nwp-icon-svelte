@@ -1,16 +1,40 @@
 import { writable } from 'svelte/store';
+import { supabase } from './supabase'
 
-function createCount() {
-	const { subscribe, set, update } = writable(0);
-
-	return {
-		subscribe,
-		increment: () => update(n => n + 1),
-		decrement: () => update(n => n - 1),
-		reset: () => set(0)
-	};
+export const nwp_auth = writable(false);
+export const nwp_user = writable(null);
+export const logout = async () => {
+	let { error } = await supabase.auth.signOut()
+	nwp_user.set(null)
 }
-const avatars = [
+export const signUp = async (email, password) => {
+	try {
+		let { user, error } = await supabase.auth.signUp({ email, password })
+		if (error) throw error
+		console.log("Sign Up Ok", user)
+	} catch (error) {
+		console.log("Sign Up Failed", error);
+	}
+}
+export const signIn = async (email, password) => {
+	try {
+		let { user, error } = await supabase.auth.signIn({ email, password })
+		if (error) throw error
+		nwp_user.set(user)
+		console.log("SignIn OK", user)
+	} catch (error) {
+		console.log("Sign In Failed", error);
+	}
+}
+
+
+export const isModal = writable(false);
+export const isSb = writable(false);
+
+
+
+// import {count, page, nwp_auth, nwp_user, nwp_profil, isSb} from './lib/stores'
+/* const avatars = [
 	"https://nwp-cgn.de/img/poser/airhostess_128.png",
 	"https://nwp-cgn.de/img/poser/alien_128.png",
 	"https://nwp-cgn.de/img/poser/alieness_128.png",
@@ -58,15 +82,4 @@ const avatars = [
 	"https://nwp-cgn.de/img/poser/svelte-logo-blue.svg",
 	"https://nwp-cgn.de/img/poser/svelte-logo-dark.svg",
 	"https://nwp-cgn.de/img/poser/svelte-logo-light.svg"
-  ];
-export const count = createCount();
-export const page = writable(0);
-export const isSb = writable(false);
-export const isLoading = writable(false);
-export const nwp_auth = writable(false);
-export const nwp_user = writable(null);
-export const nwp_session = writable(null);
-export const nwp_profil = writable(null);
-export const alert = writable(null);
-
-// import {count, page, nwp_auth, nwp_user, nwp_profil, isSb} from './lib/stores'
+  ]; */
